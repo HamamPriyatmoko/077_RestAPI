@@ -161,7 +161,7 @@ fun KontakCard(
                     contentDescription = null,
                 )
                 Text(
-                    text = kontak.telpon,
+                    text = kontak.nohp,
                     style = MaterialTheme.typography.titleMedium
                 )
             }

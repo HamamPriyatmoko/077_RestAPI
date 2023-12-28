@@ -43,8 +43,6 @@ fun KontakApp(
                 kontakUIState = homeViewModel.kontakUIState,
                 retryAction = homeViewModel::getKontak
             )
-
-
         }
     }
 }
