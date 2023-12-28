@@ -40,6 +40,7 @@ import com.example.consumeapi.R
 import com.example.consumeapi.model.Kontak
 import com.example.consumeapi.navigation.DestinasiNavigasi
 import com.example.consumeapi.ui.PenyediaViewModel
+import com.example.consumeapi.ui.TopAppBarKontak
 import com.example.consumeapi.ui.home.viewmodel.HomeViewModel
 import com.example.consumeapi.ui.home.viewmodel.KontakUIState
 
@@ -187,4 +188,14 @@ fun HomeScreen(
     viewModel: HomeViewModel = viewModel(factory = PenyediaViewModel.Factory)
 ){
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
+    Scaffold (
+        modifier = modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
+        topBar = {
+            TopAppBarKontak(
+                title = DestinasiHome.titleRes,
+                canNavigateBack = false,
+                scrollBehavior = scrollBehavior,
+            )
+        },
+        {}
 }
