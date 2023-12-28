@@ -35,9 +35,12 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.consumeapi.R
 import com.example.consumeapi.model.Kontak
 import com.example.consumeapi.navigation.DestinasiNavigasi
+import com.example.consumeapi.ui.PenyediaViewModel
+import com.example.consumeapi.ui.home.viewmodel.HomeViewModel
 import com.example.consumeapi.ui.home.viewmodel.KontakUIState
 
 @Composable
@@ -177,4 +180,9 @@ object DestinasiHome : DestinasiNavigasi {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen(){}
+fun HomeScreen(
+    navigateToItemEntry: () -> Unit,
+    modifier: Modifier = Modifier,
+    onDetailClick: (Int) -> Unit = {},
+    viewModel: HomeViewModel = viewModel(factory = PenyediaViewModel.Factory)
+){}
