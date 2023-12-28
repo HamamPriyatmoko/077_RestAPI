@@ -34,7 +34,9 @@ import com.example.consumeapi.ui.home.viewmodel.KontakUIState
 
 @Composable
 fun HomeScreen(
-    kontakUIState: KontakUIState, retryAction: () -> Unit, modifier: Modifier = Modifier
+    kontakUIState: KontakUIState,
+    retryAction: () -> Unit,
+    modifier: Modifier = Modifier
 ) {
 
     when (kontakUIState) {
@@ -42,7 +44,6 @@ fun HomeScreen(
         is KontakUIState.Success -> KontakLayout(
             kontak = kontakUIState.kontak, modifier = modifier.fillMaxWidth()
         )
-
         is KontakUIState.Error -> OnError(retryAction, modifier = modifier.fillMaxSize())
     }
 
@@ -81,7 +82,11 @@ fun OnError(retryAction: () -> Unit, modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun KontakLayout(kontak: List<Kontak>, modifier: Modifier = Modifier) {
+fun KontakLayout(
+    kontak: List<Kontak>,
+    modifier: Modifier = Modifier,
+    onDetailClick: (Kontak) -> Unit
+) {
     LazyColumn(
         modifier = modifier,
         contentPadding = PaddingValues(16.dp),
