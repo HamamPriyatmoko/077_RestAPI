@@ -185,4 +185,6 @@ fun HomeScreen(
     modifier: Modifier = Modifier,
     onDetailClick: (Int) -> Unit = {},
     viewModel: HomeViewModel = viewModel(factory = PenyediaViewModel.Factory)
-){}
+){
+    val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
+}
